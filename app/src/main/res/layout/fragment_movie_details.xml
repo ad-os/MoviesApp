@@ -32,7 +32,7 @@
             android:weightSum="1">
 
             <ImageView
-                android:id="@+id/movieImagevIew"
+                android:id="@+id/movieImageView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
@@ -43,25 +43,56 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:layout_weight="0.5"
                 android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:text="@string/in_theatres"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"/>
 
                 <TextView
                     android:id="@+id/releaseDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
                     android:gravity="center"
                     android:text="2015-6-30"
-                    android:textSize="32sp"/>
+                    android:textColor="#424242"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:text="@string/user_rating"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"/>
 
                 <TextView
                     android:id="@+id/averageRating"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
                     android:gravity="center"
                     android:text="10"
-                    android:textSize="24sp"/>
+                    android:textColor="#424242"
+                    android:textSize="16sp"/>
+
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:numStars="5"/>
 
             </LinearLayout>
         </LinearLayout>

@@ -82,8 +82,10 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
 
         @Override
         public void onClick(View v) {
+            int position = getAdapterPosition();
             Intent intent = new Intent(mContext, MovieDetails.class);
             intent.putExtra(MOVIE_DETAILS, mMovies);
+            intent.putExtra("POSITION", position);
             mContext.startActivity(intent);
         }
     }
