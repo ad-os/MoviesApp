@@ -96,11 +96,11 @@ public class MainActivityFragment extends Fragment {
     private void setMovieDetails() {
 
         MovieAdapter movieAdapter = new MovieAdapter(getActivity(), mMovies);
-        mRecyclerView.setAdapter(movieAdapter);
 
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getActivity(), 2);
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setAdapter(movieAdapter);
     }
 
     private Movie[] parseMovieDetails(String jsonData) throws JSONException {
