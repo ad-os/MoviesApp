@@ -97,13 +97,21 @@
             </LinearLayout>
         </LinearLayout>
 
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textSize="24sp"
+            android:textColor="#00BCD4"
+            android:text="Synopsis"/>
+
         <TextView
             android:id="@+id/summary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:layout_marginTop="16dp"
             android:lineSpacingMultiplier="1.5"
             android:text="In Earth's future, a global crop blight and second Dust Bowl are slowly rendering the planet uninhabitable. Professor Brand (Michael Caine), a brilliant NASA physicist, is working on plans to save mankind by transporting Earth's population to a new home via a wormhole"
             android:textColor="@android:color/black"

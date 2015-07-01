@@ -1,8 +1,10 @@
 <resources>
-    <string name="app_name">Movies App</string>
+    <string name="app_name">Movies</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_movie_details">MovieDetails</string>
+    <string name="title_activity_movie_details">Movie Detail</string>
     <string name="user_rating">User Rating</string>
     <string name="in_theatres">In Theatres</string>
+    <string name="popular_movies">Popular Movies</string>
+    <string name="best_rated">Best Rated</string>
 </resources>

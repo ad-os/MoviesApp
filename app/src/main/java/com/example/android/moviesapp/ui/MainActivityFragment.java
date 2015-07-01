@@ -6,6 +6,9 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -36,11 +39,44 @@ public class MainActivityFragment extends Fragment {
 
     public static final String TAG = MainActivity.class.getSimpleName();
 
-    Movie mMovies[];
+    private Movie mMovies[];
+
+    private String base_url;
 
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
 
     public MainActivityFragment() {
+        base_url = "http://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=";
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_fragment, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+        if(id == R.id.popular_movies){
+
+            base_url = "http://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=";
+            getResult();
+            return true;
+
+        }else if (id == R.id.best_rated){
+
+            base_url = "http://api.themoviedb.org/3/discover/movie?sort_by=vote_average.desc&api_key=";
+            getResult();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -50,9 +86,16 @@ public class MainActivityFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
         ButterKnife.bind(this, rootView);
 
+        getResult();
+
+        return rootView;
+    }
+
+    private void getResult() {
+
         String api_key="15ae93992b3faf50d91572189a738361";
 
-        String movieUrl = "http://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=" + api_key + "";
+        String movieUrl = base_url + api_key + "";
 
         OkHttpClient client = new OkHttpClient();
 
@@ -89,8 +132,6 @@ public class MainActivityFragment extends Fragment {
                 }
             }
         });
-
-        return rootView;
     }
 
     private void setMovieDetails() {
