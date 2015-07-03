@@ -15,7 +15,7 @@
             android:id="@+id/titleTextView"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:background="@drawable/title_background"
+            android:background="#00BCD4"
             android:fontFamily="sans-serif"
             android:gravity="center"
             android:text="Jurrasic World"
@@ -102,6 +102,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
+            android:id="@+id/synopsis"
             android:textSize="24sp"
             android:textColor="#00BCD4"
             android:text="Synopsis"/>
